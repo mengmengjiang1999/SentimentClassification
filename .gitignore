@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*~
+
+# Model checkpoints
+*.pkl
+*.pkl2
+*.pt
+*.pth
+*.ckpt
+
+# Local datasets and word vectors
+data/*.train
+data/*.valid
+data/*.test
+data/sgns.sogounews.bigram-char
+data/reduced.sgns.sogounews.bigram-char
+实验数据/
+
+# Course source materials and generated reports
+*.pdf
+*.ppt
+*.pptx

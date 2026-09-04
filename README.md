@@ -10,21 +10,32 @@
 - 基于双向 LSTM 的 RNN 模型
 - MLP baseline
 
-文本表示采用 [Chinese Word Vectors](https://github.com/Embedding/Chinese-Word-Vectors) 提供的 Sogou News 预训练词向量。详细的模型设计、参数设置和实验结果见[课程作业报告](./SentimentClassification-%E9%99%88%E5%BC%A0%E8%90%8C/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%BC%E8%AE%BA-%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A.md)。
+文本表示采用 [Chinese Word Vectors](https://github.com/Embedding/Chinese-Word-Vectors) 提供的 Sogou News 预训练词向量。详细的模型设计、参数设置和实验结果见[课程作业报告](./REPORT.md)。
 
 ## 目录说明
 
-- `SentimentClassification-陈张萌/`：模型代码、数据、实验报告及部分已训练权重
-- `实验数据/`：课程提供的原始实验数据
-- `实验三介绍PPT.pptx`、`实验三说明文档.pdf`：课程作业说明材料
+- `models/`：CNN、RNN 和 MLP 模型及配置
+- `data/`：词表和小型格式示例（不包含完整课程数据集）
+- `images/`：实验报告使用的模型结构图
+- `REPORT.md`：课程作业报告
+- `main.py`、`test.py`：训练和测试入口
 
 ## 运行方式
 
-进入代码目录：
+安装依赖：
 
 ```bash
-cd SentimentClassification-陈张萌
+python3 -m pip install -r requirements.txt
 ```
+
+然后在 `data/` 目录中准备以下本地文件：
+
+- `sinanews.train`
+- `sinanews.valid`
+- `sinanews.test`
+- `reduced.sgns.sogounews.bigram-char`
+
+数据集、预训练词向量和模型权重体积较大，不纳入本仓库版本管理。路径及训练参数可在 `models/config.py` 中调整。
 
 训练模型：
 
@@ -41,4 +52,4 @@ python3 test.py -m rnn
 python3 test.py -m cnn
 ```
 
-运行前请根据 `models/config.py` 中的配置准备预训练词向量，并安装 PyTorch、NumPy、SciPy 和 scikit-learn 等依赖。
+`test.py` 还需要将对应的本地权重文件（如 `rnn_best.pkl` 或 `cnn_best.pkl`）放在仓库根目录。
