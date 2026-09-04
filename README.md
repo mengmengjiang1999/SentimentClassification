@@ -15,7 +15,7 @@
 ## 目录说明
 
 - `models/`：CNN、RNN 和 MLP 模型及配置
-- `data/`：词表和小型格式示例（不包含完整课程数据集）
+- `data/`：匿名合成的词表和格式示例（不包含完整课程数据集）
 - `images/`：实验报告使用的模型结构图
 - `REPORT.md`：课程作业报告
 - `main.py`、`test.py`：训练和测试入口
@@ -36,6 +36,7 @@ python3 -m pip install -r requirements.txt
 - `reduced.sgns.sogounews.bigram-char`
 
 数据集、预训练词向量和模型权重体积较大，不纳入本仓库版本管理。路径及训练参数可在 `models/config.py` 中调整。
+仓库内的 `sinanews.demo` 仅用于展示输入格式，不是原始新闻语料。
 
 训练模型：
 
